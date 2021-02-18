@@ -1,5 +1,4 @@
 const productService = require("../../services/ProductService");
-const NotFoundException = require("../../exceptions/NotFoundException");
 
 const getAllProducts = async () => {
     return await productService.getAll();
