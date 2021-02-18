@@ -1,0 +1,42 @@
+
+    type Query {
+        """
+        Action responsable get products
+        """
+        getAllProducts: [Product]
+
+        getById(id: String!): Product
+    }
+
+    type Mutation {
+        """
+        Action responsable create new product
+        """
+        createProduct(input: ProductInput): Product
+
+        """
+        Action responsable delete product
+        """
+        remove(id: String!): Boolean,
+
+        """
+        Action responsable update data one product
+        """
+        update(id: String!, datasModified: ProductUpdateInput): Boolean
+    }
+
+    type Product {
+        id: String, 
+        name: String,
+        price: Float
+    }
+
+    input ProductInput {
+        name: String!,
+        price: Float!
+    }
+
+    input ProductUpdateInput {
+        name: String,
+        price: Float
+    }
